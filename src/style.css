@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #ffe6e6 ;
+    /* background-color: #ffe6e6 ; */
 }
 
 /* This rule isn't used in the project as distributed, because the JavaScript
@@ -9,6 +9,6 @@ body video {
     position: absolute;
     opacity: 0.5;
 }
-#cakes {
-    
-}
+/* #cakes {
+
+} */
