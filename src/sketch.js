@@ -190,7 +190,7 @@ function startPage() {
   textSize(width/30);
   text("Cook!!", width/2, sizey0);
   textSize(width/60);
-  text("Hover over 'Cook!!' with your hand to begin", width/2, sizey2);
+  text("Hover over 'Cook!!' with your hand to begin!", width/2, sizey2);
 
 
   // The effect of putting your hand on the Recipe bar
@@ -218,8 +218,7 @@ function startPage() {
   }
 
   // The effect of putting your hand on the DIY bar
-  textSize(width/60);
-  text("Hover over 'Cookbook' with your hand to begin!", width/2, sizey2);
+
   if (sizey1-height/20 < rwy && rwy< sizey1 + height/20 && rwx > width*1/15 && rwx < width * 14/15) {
     if (goin_b2) {
       timer = frameCount;
