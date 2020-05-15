@@ -121,11 +121,11 @@ if (poses.length > 0){
       textSize(int(width/10));
       text("Chef to Chef", width/2, height/3);
       textSize(width/30);
-      text("Cook by recipe", width/2, sizey0);
-      text("Do your own", width/2, sizey1);
+      text("Cookbook", width/2, sizey0);
+
       textSize(width/70);
 
-      text("Drag your hand to the option you wish to choose", width/2, sizey2);
+      text("Drag your hand over 'Cookbook' to begin", width/2, sizey2);
 
 
 
