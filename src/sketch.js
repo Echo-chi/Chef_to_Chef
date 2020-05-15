@@ -118,11 +118,15 @@ if (poses.length > 0){
       textAlign(CENTER, CENTER);
       textFont('monospace');
       // textSize(10);
-      textSize(int(width/20));
+      textSize(int(width/10));
       text("Chef to Chef", width/2, height/3);
-      textSize(width/40);
+      textSize(width/30);
       text("Cook by recipe", width/2, sizey0);
       text("Do your own", width/2, sizey1);
+      textSize(width/70);
+
+      text("Drag your hand to the option you wish to choose", width/2, sizey2);
+
 
 
       // The effect of putting your hand on the Recipe bar
