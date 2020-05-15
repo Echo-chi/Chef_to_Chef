@@ -10,5 +10,7 @@ body video {
     opacity: 0.5;
 }
 #cakes {
-    
+  position: absolute;
+  left: calc(50% - 110px);
+    font-size: 30px;
 }
