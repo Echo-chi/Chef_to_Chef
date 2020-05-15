@@ -188,9 +188,9 @@ function startPage() {
   textSize(int(width/10));
   text("Chef to Chef", width/2, height/3);
   textSize(width/30);
-  text("Cookbook", width/2, sizey0);
+  text("Cook!!", width/2, sizey0);
   textSize(width/60);
-  text("Hover over 'Cookbook' with your hand to begin!", width/2, sizey2);
+  text("Hover over 'Cook!!' with your hand to begin", width/2, sizey2);
 
 
   // The effect of putting your hand on the Recipe bar
@@ -276,6 +276,7 @@ image(foodImages[0], potX, potY, potDia, potDia);
     distance = dist(potX, potY, tx[i], ty[i]);
     if (distance < potDia/2) {
       // on the image
+
       //console.log(i);
       if (i == 1 || i == 3) {
         counter++;
