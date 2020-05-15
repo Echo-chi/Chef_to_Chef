@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: aqua;
 }
 
 /* This rule isn't used in the project as distributed, because the JavaScript
