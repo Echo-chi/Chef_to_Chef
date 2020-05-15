@@ -24,23 +24,34 @@ let frm = 0;
 
 let score = 0;
 
-let toolImagePaths = [
-  "tools/chop.png",
-  "tools/mix.png",
-  "tools/onecup.png",
-  "tools/spat.png",
-  "tools/spoon.png",
-  "tools/tea.png",
-  "tools/whisk.png"
+let foodImagePaths = [
+
+"images/mix.png",
+        "images/spoon.png",
+         "images/but.png",
+         "images/cocoa.png",
+         "images/drop.png",
+         "images/egg.png",
+         "images/gar.png",
+         "images/milk.png",
+         "images/pow.png",
+         "images/sauce.png",
+         "images/rice.png",
+         "images/vanilla.png",
+         "images/veg.png",
+         "images/sugar.png",
+         "images/flour.png",
+         "images/whisk.png"
 ];
-let toolImages = [];
+
+let foodImages = [];
 let tx = [];
 let ty = [];
 
 export function preload() {
-  // load all tool images with the path in the array, "toolImagePaths"
-  for (let i=0; i<toolImagePaths.length; i++) {
-    toolImages[i] = loadImage(toolImagePaths[i]);
+  // load all food images with the path in the array, "foodImagePaths"
+  for (let i=0; i<foodImagePaths.length; i++) {
+    foodImages[i] = loadImage(foodImagePaths[i]);
   }
 }
 
@@ -58,7 +69,7 @@ image(img, x, y, w, h);
 export function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  for (let i=0; i<toolImages.length; i++) {
+  for (let i=0; i<foodImages.length; i++) {
     tx[i] = random(width);
     ty[i] = random(height);
   }
@@ -174,11 +185,12 @@ function startPage() {
   textAlign(CENTER, CENTER);
   textFont('monospace');
   // textSize(10);
-  textSize(int(width/20));
+  textSize(int(width/10));
   text("Chef to Chef", width/2, height/3);
-  textSize(width/40);
-  text("Cook by recipe", width/2, sizey0);
-  text("Do your own", width/2, sizey1);
+  textSize(width/30);
+  text("Cookbook", width/2, sizey0);
+  textSize(width/60);
+  text("Hover over 'Cookbook' with your hand to begin!", width/2, sizey2);
 
 
   // The effect of putting your hand on the Recipe bar
@@ -206,6 +218,8 @@ function startPage() {
   }
 
   // The effect of putting your hand on the DIY bar
+  textSize(width/60);
+  text("Hover over 'Cookbook' with your hand to begin!", width/2, sizey2);
   if (sizey1-height/20 < rwy && rwy< sizey1 + height/20 && rwx > width*1/15 && rwx < width * 14/15) {
     if (goin_b2) {
       timer = frameCount;
@@ -237,14 +251,14 @@ function cookByRecipe() {
   noStroke();
   fill(255, 150);
   ellipse(potX, potY, potDia, potDia);
-
+image(foodImages[0], potX, potY, potDia, potDia);
   let counter = 0;
   let detectArea = 150;
-  for (let i=0; i<toolImages.length; i++) {
+  for (let i=0; i<foodImages.length; i++) {
     // noStroke();
     // fill(255, 150);
     // ellipse(tx[i], ty[i], detectArea, detectArea);
-    image(toolImages[i], tx[i], ty[i], 100, 100);
+    image(foodImages[i], tx[i], ty[i], 100, 100);
 
 
     let distance;
@@ -274,6 +288,7 @@ function cookByRecipe() {
   console.log(counter);
   // if (counter == 2) {do something}
 }
+
 
 function doYourOwn() {
 
