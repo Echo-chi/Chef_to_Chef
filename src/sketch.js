@@ -67,6 +67,7 @@ image(img, x, y, w, h);
 // p5js calls this code once when the page is loaded (and, during development,
 // when the code is modified.)
 export function setup() {
+  bg = loadImage('assets/moonwalk.jpg');
   createCanvas(windowWidth, windowHeight);
 
   for (let i=0; i<foodImages.length; i++) {
