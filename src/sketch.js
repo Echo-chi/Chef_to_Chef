@@ -23,6 +23,8 @@ let rem = 0;
 let frm = 0;
 
 let score = 0;
+let bg;
+
 
 let foodImagePaths = [
 
@@ -67,7 +69,7 @@ image(img, x, y, w, h);
 // p5js calls this code once when the page is loaded (and, during development,
 // when the code is modified.)
 export function setup() {
-  bg = loadImage('assets/moonwalk.jpg');
+
   createCanvas(windowWidth, windowHeight);
 
   for (let i=0; i<foodImages.length; i++) {
@@ -97,7 +99,11 @@ export function setup() {
 // nothing---instead, the call to `poseNet.on` in `setup` (above) specifies a
 // function that is applied to the list of poses whenever PoseNet processes a
 // video frame.
-export function draw() {}
+export function draw() {
+  background(bg);
+
+
+}
 
 function drawPoses(poses) {
   // console.log(poses);
