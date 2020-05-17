@@ -93,7 +93,11 @@ imgs=loadImage("images/111.jpg");
 // nothing---instead, the call to `poseNet.on` in `setup` (above) specifies a
 // function that is applied to the list of poses whenever PoseNet processes a
 // video frame.
-export function draw() {}
+export function draw() {
+  background(bg);
+
+
+}
 
 function drawPoses(poses) {
   // console.log(poses);
@@ -161,6 +165,8 @@ function drawPoses(poses) {
       case 2:
       break;
 
+  text(ca, 20, 30);
+}
 
     case 3:
       finish();
@@ -217,6 +223,12 @@ function startPage() {
   } else {
     goin_b1 = true;
   }
+  console.log(counter);
+  // if (counter == 2) {do something}
+}
+
+
+function doYourOwn() {
 
   // if (sizey0-height/20 < rwy && rwy< sizey0 + height/20 && rwx > width*1/15 && rwx < width * 14/15) {
   //   if (goin_b1) {
