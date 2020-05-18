@@ -65,7 +65,7 @@ image(img, x, y, w, h);
 export function setup() {
   // bg = loadImage('assets/moonwalk.jpg');
   createCanvas(windowWidth, windowHeight);
-imgs=loadImage("images/111.jpg");
+//imgs=loadImage("images/111.jpg");
   for (let i=0; i<foodImages.length; i++) {
     tx[i] = random(width);
     ty[i] = random(height);
@@ -94,7 +94,7 @@ imgs=loadImage("images/111.jpg");
 // function that is applied to the list of poses whenever PoseNet processes a
 // video frame.
 export function draw() {
-  background(bg);
+  //background(bg);
 
 
 }
@@ -165,8 +165,7 @@ function drawPoses(poses) {
       case 2:
       break;
 
-  text(ca, 20, 30);
-}
+
 
     case 3:
       finish();
@@ -223,7 +222,7 @@ function startPage() {
   } else {
     goin_b1 = true;
   }
-  console.log(counter);
+  //console.log(counter);
   // if (counter == 2) {do something}
 }
 
