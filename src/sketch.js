@@ -1,8 +1,5 @@
 // setup initializes this to a p5.js Video instance.
 let video;
-let letters = [];
-let hits = [];
-let alphabet = ["A", "B", "C", "D", "E", "F", 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 let count = 0;
 let ca = 0;
 let timer;
@@ -12,7 +9,6 @@ let lwx = 0; // leftWrist x position
 let lwy = 0; // leftWrist y position
 let index = 0; // The index of the alphabet
 let time_count = 0;
-let time = 60;
 let model = 1;
 
 let goin_b1 = true;
@@ -21,9 +17,6 @@ let goin_b3 = true;
 let remaining = 0;
 let rem = 0;
 let frm = 0;
-
-let score = 0;
-let bg;
 
 
 let foodImagePaths = [
@@ -45,6 +38,7 @@ let foodImagePaths = [
          "images/flour.png",
          "images/whisk.png"
 ];
+let imgs ="images/111.jpg";
 
 let foodImages = [];
 let tx = [];
@@ -69,9 +63,9 @@ image(img, x, y, w, h);
 // p5js calls this code once when the page is loaded (and, during development,
 // when the code is modified.)
 export function setup() {
-
+  // bg = loadImage('assets/moonwalk.jpg');
   createCanvas(windowWidth, windowHeight);
-
+//imgs=loadImage("images/111.jpg");
   for (let i=0; i<foodImages.length; i++) {
     tx[i] = random(width);
     ty[i] = random(height);
@@ -100,7 +94,7 @@ export function setup() {
 // function that is applied to the list of poses whenever PoseNet processes a
 // video frame.
 export function draw() {
-  background(bg);
+  //background(bg);
 
 
 }
@@ -126,10 +120,10 @@ function drawPoses(poses) {
       lwy = height;
     }
   } else{
-    rwx = mouseX;
-    rwy = mouseY;
-    lwx = width;
-    lwy = height;
+    // rwx = mouseX;
+    // rwy = mouseY;
+    // lwx = width;
+    // lwy = height;
   }
 
 
@@ -165,14 +159,16 @@ function drawPoses(poses) {
     // Start page
       startPage();
       break;
-    case 1:
-      // recipe page
+      case 1:
       break;
-    case 2:
 
+      case 2:
       break;
+
+
+
     case 3:
-      doYourOwn();
+      finish();
       break;
     case 4:
       cookByRecipe();
@@ -183,9 +179,12 @@ function drawPoses(poses) {
 }
 
 function startPage() {
-  let sizey0 = (height/3)+height/6;
+
+
+  let sizey0 = (height/2)+height/6;
   let sizey1 = (height/3)+1.7*height/6;
   let sizey2 = (height/3)+2.5*height/5;
+  let sizey3 = (height/4)+3*height/5;
 
   // Display the Start, Settings and Exit
   fill(255);
@@ -196,8 +195,8 @@ function startPage() {
   text("Chef to Chef", width/2, height/3);
   textSize(width/30);
   text("Cook!!", width/2, sizey0);
-  textSize(width/60);
-  text("Hover over 'Cook!!' with your hand to begin!", width/2, sizey2);
+  textSize(width/50);
+  text("Move your hand to begin!", width/2, sizey2);
 
 
   // The effect of putting your hand on the Recipe bar
@@ -223,41 +222,74 @@ function startPage() {
   } else {
     goin_b1 = true;
   }
+  //console.log(counter);
+  // if (counter == 2) {do something}
+}
+
+
+function doYourOwn() {
+
+  // if (sizey0-height/20 < rwy && rwy< sizey0 + height/20 && rwx > width*1/15 && rwx < width * 14/15) {
+  //   if (goin_b1) {
+  //     timer = frameCount;
+  //   }
+  //   goin_b1 = false;
+  //   noStroke();
+  //   fill(255, 50);
+  //   rectMode(CENTER);
+  //   rect(width/2, sizey0, width*7/8, height/10);
+  //   remaining = frameCount - timer;
+  //
+  //   if (remaining < 50) {
+  //     fill(100);
+  //     arc(rwx, rwy, 80, 80, 0);
+  //   } else {
+  //     ca = 4;
+  //     frm = frameCount;
+  //     goin_b1 = true;
+  //   }
+  // } else {
+  //   goin_b1 = true;
+  // }
 
   // The effect of putting your hand on the DIY bar
 
-  if (sizey1-height/20 < rwy && rwy< sizey1 + height/20 && rwx > width*1/15 && rwx < width * 14/15) {
-    if (goin_b2) {
-      timer = frameCount;
-    }
-    goin_b2 = false;
-    noStroke();
-    fill(255, 50);
-    rectMode(CENTER);
-    rect(width/2, sizey1, width*7/8, height/8);
-    remaining = frameCount - timer;
-
-    if (remaining < 50) {
-      fill(100);
-      arc(rwx, rwy, 80, 80, 0);
-    } else {
-      ca = 3;
-      goin_b2 = true;
-    }
-  } else {
-    goin_b2 = true;
-  }
+  // if (sizey1-height/20 < rwy && rwy< sizey1 + height/20 && rwx > width*1/15 && rwx < width * 14/15) {
+  //   if (goin_b2) {
+  //     timer = frameCount;
+  //   }
+  //   goin_b2 = false;
+  //   noStroke();
+  //   fill(255, 50);
+  //   rectMode(CENTER);
+  //   rect(width/2, sizey1, width*7/8, height/8);
+  //   remaining = frameCount - timer;
+  //
+  //   if (remaining < 50) {
+  //     fill(100);
+  //     arc(rwx, rwy, 80, 80, 0);
+  //   } else {
+  //     ca = 3;
+  //     goin_b2 = true;
+  //   }
+  // } else {
+  //   goin_b2 = true;
+  // }
 }
 
 function cookByRecipe() {
   // *****
+image(imgs, 800,480, 1600, 960);
   let potX = width/2;
   let potY = height/2;
+  let potX1 = width;
+  let potY1 = height;
   let potDia = 200;
+  let potDia1 = 1000;
   noStroke();
-  fill(255, 150);
+  fill(255);
   ellipse(potX, potY, potDia, potDia);
-image(foodImages[0], potX, potY, potDia, potDia);
+  image(foodImages[0], potX, potY, potDia, potDia);
   let counter = 0;
   let detectArea = 150;
   for (let i=0; i<foodImages.length; i++) {
@@ -291,13 +323,64 @@ image(foodImages[0], potX, potY, potDia, potDia);
 
       // not
     }
+    distance = dist(rwx, rwy, potX, potY);
+    if (distance < detectArea/2) {
+      // on the image
+      fill(255);
+      ellipse(potX, potY, potDia, potDia);
+      image(foodImages[0], potX, potY, potDia, potDia);
+    } else {
+      // not
+    }
+
   }
-  console.log(counter);
+
+  let sizey0 = (height/3)+height/6;
+  let sizey1 = (height/3)+1.7*height/6;
+  let sizey2 = (height/3)+2.5*height/5;
+
+
+  fill(255);
+  textAlign(CENTER, CENTER);
+  textFont('monospace');
+  // textSize(10);
+  textSize(int(width/10));
+  textSize(width/30);
+  text("Finish", width/2, sizey2);
+  textSize(width/60);
+
+
+  // The effect of putting your hand on the Recipe bar
+  if (sizey2-height/20 < rwy && rwy< sizey2 + height/20 && rwx > width*1/15 && rwx < width * 14/15) {
+    if (goin_b1) {
+      timer = frameCount;
+    }
+    goin_b1 = false;
+    noStroke();
+    fill(255, 50);
+    rectMode(CENTER);
+    rect(width/2, sizey2, width*7/8, height/10);
+    remaining = frameCount - timer;
+
+    if (remaining < 50) {
+      fill(100);
+      arc(rwx, rwy, 80, 80, 0);
+    } else {
+      ca = 4;
+      frm = frameCount;
+      goin_b1 = true;
+    }
+  } else {
+    goin_b1 = true;
+  }
+
+
+  //console.log(counter);
   // if (counter == 2) {do something}
 }
 
 
-function doYourOwn() {
+function finish() {
 
 }
 
